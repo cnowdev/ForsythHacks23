@@ -25,7 +25,7 @@ const EndScreen = ({ kWh }: {kWh:number}) => {
     setNextPage(1);
   }
   return (
-    <>
+    <div className='container'>
     {nextPage === 0 ? (
        <animated.div className="end-screen" style={fadeIn}>
        <h1>Quiz Completed!</h1>
@@ -82,7 +82,7 @@ const EndScreen = ({ kWh }: {kWh:number}) => {
       </>
     )}
    
-    </>
+    </div>
   );
 };
 

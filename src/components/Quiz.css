@@ -65,7 +65,7 @@ body {
   }
   
   .quiz-score-section {
-    background-color: #fff;
+    background-color: #000000;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -86,11 +86,15 @@ body {
     border: none;
     border-radius: 5px;
     background-color: #3498db;
-    color: #ffffff;
+    color: #000000;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .quiz-score-section button:hover {
     background-color: #2980b9;
+  }
+
+  button {
+    color: 'black'
   }

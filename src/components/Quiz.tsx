@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import './Quiz.css';
-import EndScreen from '../endscreen';
 const Quiz = () => {
   const questions = [
     {
-      question: 'hello?',
+      question: 'hello?',   
       options: ['London', 'Berlin', 'Paris', 'Madrid'],
       text: 0
     },
@@ -85,9 +84,9 @@ const Quiz = () => {
     setCurrentNumberInput(0);
   }
 
-  if(!end){
+
       return (
-        <div className="quiz-container">(
+        <div className="quiz-container">
           <div className="quiz-question-section">
             <div className="quiz-question-count">
               <span>Question {currentQuestion + 1}</span>/{questions.length}
@@ -113,10 +112,10 @@ const Quiz = () => {
               </>}
             </div>
           </div>
-        )
+        
       </div>
       )
-    }    
+
 
   } 
 
