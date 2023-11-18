@@ -35,7 +35,7 @@ const EndScreen = ({ kWh}: {kWh:number}) => {
     {nextPage === 0 ? (
        <animated.div className="end-screen" style={fadeIn}>
        <h1>Quiz Completed!</h1>
-       <p>You use approximately {usage} kWh of electricity per year.</p>
+       <p>You use approximately {parseInt(usage).toFixed(2)} kWh of electricity per year.</p>
  
        <div className="additional-facts">
          <div>
@@ -58,7 +58,7 @@ const EndScreen = ({ kWh}: {kWh:number}) => {
        <div className="additional-facts">
        <div>
            <strong>Cost for a Solar Energy System for your needs:</strong>
-           <p>${solar}</p>
+           <p>${parseInt(solar).toFixed(2)}</p>
          </div>
        </div>
      <button className='quiz-score-section' onClick={doNextPage}>Next</button>
