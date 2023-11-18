@@ -3,10 +3,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import EndScreen from './endscreen'
 import './App.css'
+import Quiz from './components/Quiz'
 
 function App() {
+
   return (
-    <EndScreen kWh={108201820} />
+    <>
+      <div>
+        <Quiz/>
+      </div>
+    </>
   )
 }
 

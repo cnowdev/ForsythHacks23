@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #242424; /* Set your desired background color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+  
+  .quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .quiz-question-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 80%;
+    text-align: center;
+    animation: fade-in 0.5s ease;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .quiz-question-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 900;
+  }
+  
+  .quiz-options button {
+    display: block; /* Display buttons as block elements */
+    width: 100%; /* Make buttons full-width */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+  }
+  
+  .quiz-options button:hover {
+    background-color: #2980b9;
+  }
+  
+  .quiz-score-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 80%;
+    text-align: center;
+    animation: fade-in 0.5s ease;
+  }
+  
+  .quiz-score-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .quiz-score-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .quiz-score-section button:hover {
+    background-color: #2980b9;
+  }
