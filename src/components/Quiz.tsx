@@ -113,8 +113,6 @@ const Quiz = () => {
                   <button
                       onClick={() => handleHourSubmit(currentNumberInput, questions[currentQuestion].Eusage!)}>Submit</button>
   
-  <button
-                      onClick={() => console.log(totalEUsage)}>debug</button>
               
               </>}
             </div>
