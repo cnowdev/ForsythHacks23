@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import './Quiz.css';
+
+import { useNavigate } from 'react-router-dom'
+
 const Quiz = () => {
+
+    const navigate = useNavigate();
   const questions = [
     {
       question: 'hello?',   
@@ -70,7 +75,7 @@ const Quiz = () => {
   const handleHourSubmit = (hourInput: number, EusagePerHr: number) => {
     const nextQuestion = currentQuestion + 1;
     if(nextQuestion == questions.length){
-      setEnd(true)
+      navigate(`/results/${totalEUsage * 365}`)
     }
     console.log(hourInput, EusagePerHr);
 

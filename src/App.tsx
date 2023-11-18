@@ -13,7 +13,7 @@ function App() {
       <div>
         <Routes>
           <Route path='/' element={<Quiz/>}/>
-          <Route path='/results' element={<EndScreen kWh={0}/>}/>
+          <Route path='/results/:usage' element={<EndScreen kWh={0}/>}/>
         </Routes>
       </div>
     </>
