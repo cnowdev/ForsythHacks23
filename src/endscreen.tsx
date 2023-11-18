@@ -2,18 +2,23 @@ import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import {useState} from 'react';
 import './endscreen.css'
+import { useParams } from 'react-router-dom';
 
-const EndScreen = ({ kWh }: {kWh:number}) => {
+const EndScreen = ({ kWh}: {kWh:number}) => {
+
+
+  let { usage } = useParams()
   const carbonEmissionFactor = 0.4; // kg of CO2 per kWh
   const landUsageFactor = 0.015; // square meters of land per kWh
   const treesSavedFactor = 0.0059; // number of trees saved per kWh
   const waterSavedFactor = 0.1; // liters of water saved per kWh
+
   const solarCost = 3.383;
-  const solar = (kWh * solarCost)
-  const carbonEmission = (kWh * carbonEmissionFactor).toFixed(2);
-  const landUsage = (kWh * landUsageFactor).toFixed(2);
-  const treesSaved = Math.round(kWh * treesSavedFactor);
-  const waterSaved = (kWh * waterSavedFactor).toFixed(2);
+  const solar = (usage * solarCost)
+  const carbonEmission = (usage * carbonEmissionFactor).toFixed(2);
+  const landUsage = (usage * landUsageFactor).toFixed(2);
+  const treesSaved = Math.round(usage * treesSavedFactor);
+  const waterSaved = (usage * waterSavedFactor).toFixed(2);
 
   const [nextPage, setNextPage] = useState(0);
   // Animation for visual elements
@@ -30,7 +35,7 @@ const EndScreen = ({ kWh }: {kWh:number}) => {
     {nextPage === 0 ? (
        <animated.div className="end-screen" style={fadeIn}>
        <h1>Quiz Completed!</h1>
-       <p>You use approximately {kWh} kWh of electricity per year.</p>
+       <p>You use approximately {usage} kWh of electricity per year.</p>
  
        <div className="additional-facts">
          <div>
@@ -61,7 +66,7 @@ const EndScreen = ({ kWh }: {kWh:number}) => {
     ) : (
       <>
       <h1>Quiz Completed!</h1>
-       <p>You use approximately {kWh} kWh of electricity per year.</p>
+       <p>You use approximately {usage} kWh of electricity per year.</p>
        <p>Heres some tips to help you lower that!</p>
  
        <ol>
@@ -85,6 +90,9 @@ const EndScreen = ({ kWh }: {kWh:number}) => {
         <li>Conduct a home energy audit for efficiency.</li>
       </ol>
 
+      <button className='quiz-score-section' onClick={() => {
+        console.log(usage);
+      }}>Debug</button>
 
       </>
     )}
