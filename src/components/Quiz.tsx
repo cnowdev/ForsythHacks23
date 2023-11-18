@@ -55,6 +55,18 @@ const Quiz = () => {
         options: []
 
     },
+    {
+      question: "Roughly how many hours a day is your washer/dryer running?",
+      text: 1,
+      Eusage: 3.5,
+      options: []
+    },
+    {
+      question: "Roughly how many hours do you use your desktop computer per day?",
+      text: 1,
+      Eusage: 0.5,
+      options: []
+    }
     // Add more questions here...
   ];
 
