@@ -90,9 +90,6 @@ const EndScreen = ({ kWh}: {kWh:number}) => {
         <li>Conduct a home energy audit for efficiency.</li>
       </ol>
 
-      <button className='quiz-score-section' onClick={() => {
-        console.log(usage);
-      }}>Debug</button>
 
       </>
     )}
