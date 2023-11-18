@@ -13,6 +13,8 @@ const EndScreen = ({ kWh}: {kWh:number}) => {
   const treesSavedFactor = 0.0059; // number of trees saved per kWh
   const waterSavedFactor = 0.1; // liters of water saved per kWh
 
+  const solarCost = 3.383;
+  const solar = (usage * solarCost)
   const carbonEmission = (usage * carbonEmissionFactor).toFixed(2);
   const landUsage = (usage * landUsageFactor).toFixed(2);
   const treesSaved = Math.round(usage * treesSavedFactor);
@@ -51,6 +53,12 @@ const EndScreen = ({ kWh}: {kWh:number}) => {
          <div>
            <strong>Approximate Water Used:</strong>
            <p>{waterSaved} liters</p>
+         </div>
+       </div>
+       <div className="additional-facts">
+       <div>
+           <strong>Cost for a Solar Energy System for your needs:</strong>
+           <p>${solar}</p>
          </div>
        </div>
      <button className='quiz-score-section' onClick={doNextPage}>Next</button>
