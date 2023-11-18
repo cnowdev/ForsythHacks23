@@ -53,38 +53,40 @@ const Quiz = () => {
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [score, setScore] = useState(0);
-  const [showScore, setShowScore] = useState(false);
+
+  const [totalEUsage, setTotalEUsage] = useState(0);
+
+
 
   const [currentNumberInput, setCurrentNumberInput] = useState(0);
 
   const handleAnswerOptionClick = (selectedAnswer: string) => {
-    if (selectedAnswer === questions[currentQuestion].correctAnswer) {
-      setScore(score + 1);
-    }
-
+    
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
-    }
+    } 
   };
 
-  const resetQuiz = () => {
-    setCurrentQuestion(0);
-    setScore(0);
-    setShowScore(false);
-  };
+  const handleHourSubmit = (hourInput: number, EusagePerHr: number) => {
+    const nextQuestion = currentQuestion + 1;
+
+    console.log(hourInput, EusagePerHr);
+
+    const newTotalUsage = totalEUsage + (hourInput * EusagePerHr);
+    setTotalEUsage(newTotalUsage);
+    if(nextQuestion < questions.length) {
+        setCurrentQuestion(nextQuestion);
+    }
+
+    console.log(totalEUsage);
+    setCurrentNumberInput(0);
+  }
+
+
 
   return (
-    <div className="quiz-container">
-      {showScore ? (
-        <div className="quiz-score-section">
-          <p>You scored {score} out of {questions.length}!</p>
-          <button onClick={resetQuiz}>Try Again</button>
-        </div>
-      ) : (
+    <div className="quiz-container">(
         <div className="quiz-question-section">
           <div className="quiz-question-count">
             <span>Question {currentQuestion + 1}</span>/{questions.length}
@@ -100,14 +102,17 @@ const Quiz = () => {
               </button>
             ))}
             {questions[currentQuestion].text > 0 && <>
-                <input type="number" onChange={(e) => setCurrentNumberInput(e)}/>
+                <input type="number" onChange={(e) => setCurrentNumberInput(parseInt(e.target.value))} value={currentNumberInput}/>
                 <button
-                    onClick={() => handleHourSubmit(e)}>Submit</button>
+                    onClick={() => handleHourSubmit(currentNumberInput, questions[currentQuestion].Eusage!)}>Submit</button>
+
+<button
+                    onClick={() => console.log(totalEUsage)}>debug</button>
             
             </>}
           </div>
         </div>
-      )}
+      )
     </div>
   );
 };
