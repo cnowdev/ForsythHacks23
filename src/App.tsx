@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import EndScreen from './endscreen'
@@ -18,6 +18,11 @@ function App() {
       </div>
     </>
   )
+
+  useEffect(() => {
+    document.title = 'Energy Quiz'
+  }, [])
+  
 }
 
 export default App

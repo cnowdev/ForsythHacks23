@@ -7,6 +7,7 @@ const Quiz = () => {
 
     const navigate = useNavigate();
   const questions = [
+    /*
     {
       question: 'hello?',   
       options: ['London', 'Berlin', 'Paris', 'Madrid'],
@@ -17,6 +18,7 @@ const Quiz = () => {
       options: ['Mars', 'Venus', 'Jupiter', 'Mercury'],
       text: 0
     },
+    */
 
     {
         question: 'Roughly how many hours a day do you have your TV on per day?',
