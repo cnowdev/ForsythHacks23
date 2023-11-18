@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Quiz.css';
-
+import EndScreen from '../endscreen';
 const Quiz = () => {
   const questions = [
     {
@@ -55,7 +55,7 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const [totalEUsage, setTotalEUsage] = useState(0);
-
+  const [end, setEnd] = useState(false);
 
 
   const [currentNumberInput, setCurrentNumberInput] = useState(0);
@@ -70,7 +70,9 @@ const Quiz = () => {
 
   const handleHourSubmit = (hourInput: number, EusagePerHr: number) => {
     const nextQuestion = currentQuestion + 1;
-
+    if(nextQuestion == questions.length){
+      setEnd(true)
+    }
     console.log(hourInput, EusagePerHr);
 
     const newTotalUsage = totalEUsage + (hourInput * EusagePerHr);
@@ -83,38 +85,39 @@ const Quiz = () => {
     setCurrentNumberInput(0);
   }
 
-
-
-  return (
-    <div className="quiz-container">(
-        <div className="quiz-question-section">
-          <div className="quiz-question-count">
-            <span>Question {currentQuestion + 1}</span>/{questions.length}
-          </div>
-          <div className="quiz-question-text">{questions[currentQuestion].question}</div>
-          <div className="quiz-options">
-            {questions[currentQuestion].options!.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswerOptionClick(option)}
-              >
-                {option}
-              </button>
-            ))}
-            {questions[currentQuestion].text > 0 && <>
-                <input type="number" onChange={(e) => setCurrentNumberInput(parseInt(e.target.value))} value={currentNumberInput}/>
+  if(!end){
+      return (
+        <div className="quiz-container">(
+          <div className="quiz-question-section">
+            <div className="quiz-question-count">
+              <span>Question {currentQuestion + 1}</span>/{questions.length}
+            </div>
+            <div className="quiz-question-text">{questions[currentQuestion].question}</div>
+            <div className="quiz-options">
+              {questions[currentQuestion].options!.map((option, index) => (
                 <button
-                    onClick={() => handleHourSubmit(currentNumberInput, questions[currentQuestion].Eusage!)}>Submit</button>
-
-<button
-                    onClick={() => console.log(totalEUsage)}>debug</button>
-            
-            </>}
+                  key={index}
+                  onClick={() => handleAnswerOptionClick(option)}
+                >
+                  {option}
+                </button>
+              ))}
+              {questions[currentQuestion].text > 0 && <>
+                  <input type="number" onChange={(e) => setCurrentNumberInput(parseInt(e.target.value))} value={currentNumberInput}/>
+                  <button
+                      onClick={() => handleHourSubmit(currentNumberInput, questions[currentQuestion].Eusage!)}>Submit</button>
+  
+  <button
+                      onClick={() => console.log(totalEUsage)}>debug</button>
+              
+              </>}
+            </div>
           </div>
-        </div>
+        )
+      </div>
       )
-    </div>
-  );
-};
+    }    
+
+  } 
 
 export default Quiz;
