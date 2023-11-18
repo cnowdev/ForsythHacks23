@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# Electric Consumption Quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React.js application that educates users about their electric consumption by providing facts and information based on the amount of electricity they use.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Introduction
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The Electric Consumption Quiz is an interactive React.js application designed to raise awareness about electricity usage. Users can take a quiz to determine their electric consumption and receive information on carbon emissions, land usage, trees saved, and water saved based on their energy consumption.
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Quiz to determine electric consumption.
+- Visual representation of facts using animations.
+- Hover effect with additional fun facts.
+- Nature-themed background for a visually appealing experience.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Installation
+
+1. Clone the repository:
+  `git clone https://github.com/your-username/electric-consumption-quiz.git`
+
+2. Navigate to the parent directory:
+  `cd electric-consumption-quiz`
+  
+3. Install dependencies:
+  `npm install `
